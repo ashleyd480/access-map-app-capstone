@@ -1,0 +1,23 @@
+
+.nav {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  margin-top: 15px; /* Adjust the value as needed to align the toggle button vertically */
+}
+
+    .user-initial {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ccc;
+        color: #fff;
+        font-weight: bold;
+      }
+  

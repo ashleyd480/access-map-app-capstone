@@ -1,0 +1,15 @@
+.sign-up {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+    
+  }
+
+  .sign-up-form {
+    margin-top: 50px;
+  }
+
+  .sign-up-header {
+    margin-bottom: 20px;
+  }

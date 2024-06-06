@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*The body is 100vh to accomodate mobile screen so that all the sign in appears without scrolling */
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* for any page content */
+
+.content {
+  
+  margin-top: 20px;
+  margin-left: 5px;
+}
+
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.dark {
+  background-color: black;
+  color: whitesmoke;
+}
+
+.errorContainer {
+  color:red;
+  margin-top: 20px;
+}
+
+
+
+
+.buttonGroup button {
+  margin: 10px; /* Add some margin for spacing */
+  padding: 10px 20px; /* Add padding for better appearance */
+  border-radius: 20px; /* Adjust the value to control the roundness */
+}
+
+
+
+/* used boostrap react for components which have built in formatting */
+
+
+/* Small Screens (Smartphones) */
+@media only screen and (max-width: 600px) {
+  /* CSS rules for small screens */
+  .footer {
+    display: none;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Add space between items */
+  
+}
+
+}
+
+/* Medium Screens (Tablets) and Large Screens (Desktops and Laptops) */ 
+@media only screen and (min-width: 601px)  {
+
+
+  .content {
+  
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+  /* buttons show as side by row in larger screen */
+  
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+  
+    justify-content: center; /*align to left*/
+    
+    
+  }
+  
+  .buttonGroup button {
+    margin: 10px; /*Add some margin for spacing  */
+    padding: 10px 70px; /* Add padding for better appearance */
+  }
+
+
+  
+}
+
+
+
+/* Large Screens (Desktops and Laptops) */
+/* @media only screen and (min-width: 769px) and (max-width: 1024px) { */
+  /* CSS rules for large screens */
+  
+
+
+

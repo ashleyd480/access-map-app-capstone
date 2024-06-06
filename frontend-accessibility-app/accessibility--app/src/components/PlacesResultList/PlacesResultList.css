@@ -1,0 +1,11 @@
+.place-row {
+    border:2px solid black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.place-list {
+    list-style-type: none;
+
+}
