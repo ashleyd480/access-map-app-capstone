@@ -3,7 +3,7 @@
 ---
 # Introduction
 
-This capstone project was created in my 15th and 16th  week of coding bootcamp at General Assembly using React, CSS, Javascript, Java, Spring Boot, and PostgreSQL. The project is a volunteer-driven maps application with a strong focus on accessibility. By leveraging crowdsourced data, the application provides valuable information about the most accessible places in various locations, helping users with disabilities navigate their environments more easily.
+This capstone project was created in my 15th and 16th  week of coding bootcamp at General Assembly using React, CSS, Javascript, Java, Spring Boot, and PostgreSQL. The project is a volunteer-driven maps application with a strong focus on accessibility. By leveraging crowdsourced data, the application provides valuable information about the most accessible places in various locations, helping users with disabilities navigate their environments more easily. As the project is full-stack, the [frontend](https://github.com/ashleyd480/access-map-app-capstone/tree/main/frontend-accessibility-app) and [backend](https://github.com/ashleyd480/access-map-app-capstone/tree/main/backend-accessibility-app) codebases are contained in their seperate folders. 
 
 This project also presented me with various learning opportunities, where I was able to explore new React and Spring Boot concepts in addition to deep dive into connecting frontend and backend. Therefore, my readMe not only shows my design and code thought process but also things I’ve learned along the way in these 2 weeks. 
 
@@ -489,14 +489,15 @@ Our app uses several react hooks to enable efficient routing and state managemen
 ## useEffect
 This is used to handle API calls such as rendering My Account details on component mount as we saw in [Username Context](#username-context). In that example, the API call to load the account details would only happen when the component loaded and when the username was retrieved from the Context API.  `useEffect` was also used to redirect the users from localhost’s default landing page of `/` by checking on the state of `userSignedIn`.
 
-We also used `useEffect` when making the get mapping call to display all the available tags for the user to choose from on a place detail’s page. The call to fetch these available tags would happen only on component load and only when the `placeId` is retrieved from the `useParams` hook of the URL. These available tags are then mapped over a list of `Tag` components and displayed as buttons. Each button has an `onClick` function of `handleAddtag(tagId), with the parameter of `tagId` received from the `GET` mapping call in `AddTag.jsx`. (This way when a button is clicked, we would know which `tagId` is assigned to that button so the correct `tagId` is associated with that place on the backend. 
+We also used `useEffect` when making the get mapping call to display all the available tags for the user to choose from on a place detail’s page. The call to fetch these available tags would happen only on component load and only when the `placeId` is retrieved from the `useParams` hook of the URL. These available tags are then mapped over a list of `Tag` components and displayed as buttons. Each button has an `onClick` function of `handleAddtag(tagId)`, with the parameter of `tagId` received from the `GET` mapping call in `AddTag.jsx`. This way, when a button is clicked, we would know which `tagId` is assigned to that button so the correct `tagId` is associated with that place on the backend. 
 
 Note: with onClick functions to make API calls, useEffect was not needed- as the with those functions- the click is what would trigger the calls vs a component mount or a state variable’s state changing.
 
 ## useNavigate 
 `useNavigate` hook is used to programmatically navigate users to different routes within the application. This is particularly useful for redirecting users after certain actions, such as after logging in or signing up.
 
-For example, in [Auth Context](#auth-context), we saw how on`SignIn.jsx`, the user is navigated to the home page if they are signed in. 
+For example, in [Auth Context](#auth-context), we saw how in`SignIn.jsx`, the user is navigated to the home page if they are signed in. 
+
 ## useParams
 `useParams` is used to generate the item detail list for the places in the `Explore`, `Contribute`, and `Search` tab. This means that each place is clickable so the user can click in to view more details and/or can contribute a review/tag when navigating from `Contribute.`
 
@@ -574,18 +575,19 @@ return (
 
 ----
 # Thinking Ahead 
-Due to time constraints and the time investment needed for learning new concepts necessary for executing this project,   I wanted to point out my own areas of opportunity and what other ideas could have been implemented. One thing I realized through my research in my second week was the benefits of DTOs for API calls and was able to make a fix to where ~95% of my transactions use DTOs. Using a Model Mapper bean could further facilitate converting DTOs back to entities and vice versa. I will also note that while I did not get to the testing due time, I did extensively test throughout the project with manual testing via Postman and frontend interactions.
+Due to time constraints and the time investment needed for learning new concepts necessary for executing this project,   I wanted to point out my own areas of opportunity and what other ideas could have been implemented. One thing I realized through my research in my second week was the benefits of DTOs for API calls, and I was able to make a fix to where ~95% of my transactions use DTOs. Using a Model Mapper bean could further facilitate converting DTOs back to entities and vice versa. I will also note that while I did not get to the testing due to time, I did extensively test throughout the project with manual testing via Postman and frontend interactions.
 
 Some other additional UX features I would have added if there was more time in this capstone would be: allowing users to edit or delete their reviews, and clickable profiles so that each user could see others users stats and contributions. It would also have been neat to be able to integrate with Google Maps API, allowing for a more built-out database of places that users can then crowdsource accessibility information on.
 
-Furthermore, I am aware that we have only barely touched the tip of the iceberg in the realm of learning about software development. I am aware of areas to further increase code efficiency and clarity. For example, I could use a global payload object in my React codebase. Another thing would be avoiding hardcoding values such as when I mapped the ratings form as follows ` {[1, 2, 3, 4, 5].map((value) => {`
+Furthermore, I am aware that we have only barely touched the tip of the iceberg in the realm of learning about software development, and I can see areas to further increase my code efficiency and clarity. For example, I could use a global payload object in my React codebase. Another thing would be avoiding hardcoding values such as when I mapped the ratings form as follows ` {[1, 2, 3, 4, 5].map((value) => {`
 
 Below are some other ideas I had as I think ahead: 
 
 ## Sorting Efficiency
-As data size grows, I can also implement better querying by keeping the dynamic search logic by keyword and city in the backend, and sorting can be handled by the front end by the `.sort` method.. This is because if say the user's keyword on the frontend doesn't change, and they simply are just changing how they are sorting, this can cause unnecessary calls to the backend. 
+As data size grows, I can also implement better querying by keeping the dynamic search logic by keyword and city in the backend, and sorting can be handled by the front end by the `.sort` method. This is because if say the user's keyword on the frontend doesn't change, and they simply are just changing how they are sorting, this can cause unnecessary calls to the backend. 
 
 An example code block could look like this:
+
 ```
 const sortPlaces = (places, sortField, sortDirection) => {
 // When sorting using the subtraction approach, the negative value determines the order of elements in the sorted array.
