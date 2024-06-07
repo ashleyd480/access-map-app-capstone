@@ -111,7 +111,7 @@ npm install react-bootstrap bootstrap
 
 ---
 # UX Design
-My React app codebase is separated into presentational components, and containers which handle the logic and API calls. Components are “called” in the containers. When brainstorming the CSS and app frontend flow, in addition to my initial [wireframe](src/wireframe.pdf), here was my design approach: 
+My React app codebase is separated into presentational components, and containers which handle the logic and API calls. Components are “called” in the containers. When brainstorming the CSS and app frontend flow, in addition to my initial [wireframe](https://github.com/ashleyd480/access-map-app-capstone/blob/main/frontend-accessibility-app/accessibility--app/src/assets/wireframe.pdf), here was my design approach: 
 
 ## Accessibility Considerations
 The user interface (UI) of the application is designed to be clean and low-sensory. In the log-in and sign-in page, I experimented with code to allow for compatibility with screen readers. This approach ensures that the app is accessible to users with sensory processing issues and those who rely on assistive technologies. Additionally, the app is inclusive of multiple devices, as it is mobile-responsive (with a hamburger style menu and buttons as a single-stacked column vs side by side when on mobile devices). 
