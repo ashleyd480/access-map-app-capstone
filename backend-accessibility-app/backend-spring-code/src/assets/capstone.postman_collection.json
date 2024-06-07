@@ -1,0 +1,532 @@
+{
+	"info": {
+		"_postman_id": "4e3f682a-8da4-4e59-939c-62a4a6b9aafd",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34144607"
+	},
+	"item": [
+		{
+			"name": "Postman Setup",
+			"item": [
+				{
+					"name": "Ger Users- ensure populate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"username\": \"user1\",\n    \"password\": \"password1\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"city\": \"Austin\",\n    \"state\": \"TX\"\n  },\n  {\n    \"username\": \"user2\",\n    \"password\": \"password2\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"city\": \"Miami\",\n    \"state\": \"FL\"\n  },\n  {\n    \"username\": \"user3\",\n    \"password\": \"password3\",\n    \"firstName\": \"Michael\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"michael.johnson@example.com\",\n    \"city\": \"Los Angeles\",\n    \"state\": \"CA\"\n   \n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Places - ensure populate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"username\": \"user1\",\n    \"password\": \"password1\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"city\": \"Austin\",\n    \"state\": \"TX\"\n  },\n  {\n    \"username\": \"user2\",\n    \"password\": \"password2\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"city\": \"Miami\",\n    \"state\": \"FL\"\n  },\n  {\n    \"username\": \"user3\",\n    \"password\": \"password3\",\n    \"firstName\": \"Michael\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"michael.johnson@example.com\",\n    \"city\": \"Los Angeles\",\n    \"state\": \"CA\"\n   \n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/places",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Reviews- ensure populate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"username\": \"user1\",\n    \"password\": \"password1\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"city\": \"Austin\",\n    \"state\": \"TX\"\n  },\n  {\n    \"username\": \"user2\",\n    \"password\": \"password2\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"city\": \"Miami\",\n    \"state\": \"FL\"\n  },\n  {\n    \"username\": \"user3\",\n    \"password\": \"password3\",\n    \"firstName\": \"Michael\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"michael.johnson@example.com\",\n    \"city\": \"Los Angeles\",\n    \"state\": \"CA\"\n   \n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reviews",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Tags- ensure popu.ate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"username\": \"user1\",\n    \"password\": \"password1\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"city\": \"Austin\",\n    \"state\": \"TX\"\n  },\n  {\n    \"username\": \"user2\",\n    \"password\": \"password2\",\n    \"firstName\": \"Jane\",\n    \"lastName\": \"Smith\",\n    \"email\": \"jane.smith@example.com\",\n    \"city\": \"Miami\",\n    \"state\": \"FL\"\n  },\n  {\n    \"username\": \"user3\",\n    \"password\": \"password3\",\n    \"firstName\": \"Michael\",\n    \"lastName\": \"Johnson\",\n    \"email\": \"michael.johnson@example.com\",\n    \"city\": \"Los Angeles\",\n    \"state\": \"CA\"\n   \n  }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Setup",
+			"item": [
+				{
+					"name": "Get User By Username",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?username=user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "user1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By Username",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"username\": \"user1\",\n  \"password\": \"newpassword\",\n  \"firstName\": \"Jane\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"michael.johnson@newemail.com\",\n    \"city\": \"Miami\",\n    \"state\": \"FL\"\n  \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"user1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User and Forget Required Fields",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"user2\",\n  \"password\": \"newpassword\",\n  \"firstName\": \"\",\n  \"lastName\": \"Johnson\",\n  \"email\": \"michael.johnsonewemail.com\",\n   \"city\": \"Miami\",\n    \"state\": \"FL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By Username",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"DA BESTEST USER EVA\",\n  \"email\": \"newuser@example.com\",\n  \"password\": \"password123\",\n  \"profilePictureURL\": \"https://example.com/profile_pic.jpg\",\n  \"userBio\": \"A new user joining the community\",\n  \"address\": {\n      \"street\": \"1234 Nunya Business St\",\n      \"city\": \"City 11\",\n      \"state\": \"State 11\",\n      \"zipCode\": \"01234\",\n      \"country\": \"Country 11\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"user1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get NonExistent User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users?username=user50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "user50"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Get geolocated places by user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/places/users/user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"places",
+								"users",
+								"user1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get place details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/places/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"places",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dynamic Search by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/places/search?keyword=bar&city=los angeles&sortField=name&direction=Ascending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"places",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "bar"
+								},
+								{
+									"key": "city",
+									"value": "los angeles"
+								},
+								{
+									"key": "sortField",
+									"value": "name"
+								},
+								{
+									"key": "direction",
+									"value": "Ascending"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dynamic Search By Rating",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/places/search?keyword=bar&city=los angeles&sortField=rating&direction=Descending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"places",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "bar"
+								},
+								{
+									"key": "city",
+									"value": "los angeles"
+								},
+								{
+									"key": "sortField",
+									"value": "rating"
+								},
+								{
+									"key": "direction",
+									"value": "Descending"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tag",
+			"item": [
+				{
+					"name": "Get Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tags",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Available Tags",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tags/places/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tags",
+								"places",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Tag to Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tags/1/places/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tags",
+								"1",
+								"places",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Add Review to Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"rating\": 5,\n  \"comment\": \"very accessible\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reviews/users/user1/places/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"users",
+								"user1",
+								"places",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "GetProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/profile/user1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"profile",
+								"user1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
