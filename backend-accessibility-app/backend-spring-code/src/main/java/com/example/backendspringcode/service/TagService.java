@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class TagService {
@@ -89,22 +91,16 @@ It looks through each tag on the all tags list and as it’s on one tag on that 
         // these are tags the place already has, we don't want to show these to user
         List<FeatureTag> placeExistingTags = place.getTags();
         // Filter available tags (tags not associated with the place)
-        List<FeatureTag> availableTags = new ArrayList<>();
-        for (FeatureTag tag : allTagsList) {
-            boolean found = false;
-            for (FeatureTag existingTag : placeExistingTags) {
-                if (tag.getTagId().equals(existingTag.getTagId())) {
-                    found = true;
-                    break;
-
-                }
-            }
-            if (!found) {
-                availableTags.add(tag);
-            }
-
+        // return avaialble tags
+        Map<Integer, FeatureTag> availableMap = allTagsList.stream().collect(Collectors.toMap(
+                tag -> tag.getTagId(),
+                tag -> tag
+        ));
+        for (FeatureTag tag : placeExistingTags) {
+            availableMap.remove(tag.getTagId());
         }
-        return availableTags;
+        return new ArrayList<>(availableMap.values());
+
     }
 
     }

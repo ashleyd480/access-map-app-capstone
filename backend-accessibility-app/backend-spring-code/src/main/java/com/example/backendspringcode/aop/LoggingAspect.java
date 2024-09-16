@@ -5,7 +5,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
-@Slf4j // simple logging facade for Java
+@Slf4j// simple logging facade for Java
 @Aspect // is ready to spy on other classes   🧐
 @Component // tells Spring to create bean of that class
 /* Upon application launch, Spring scans for classes that are candidates for becoming a bean by checking for annotations like @Component

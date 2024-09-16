@@ -10,6 +10,8 @@ import com.example.backendspringcode.repository.IPlaceRepository;
 import com.example.backendspringcode.repository.IReviewRepository;
 import com.example.backendspringcode.repository.ITagRepository;
 import com.example.backendspringcode.repository.IUserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,9 @@ import java.util.List;
 
 @Service
 public class PlaceService {
+    private static final Logger log = LoggerFactory.getLogger(PlaceService.class);
+
+
     @Autowired
     IPlaceRepository iPlaceRepository;
 
@@ -60,7 +65,7 @@ public class PlaceService {
                 .orElseThrow(() -> new RuntimeException("User not found with username: " + username));
 
         String userCity = user.getCity().toLowerCase(); // Convert city to lowercase
-        System.out.println(userCity + " is user city and username is " + username);
+        log.info(userCity + " is user city and username is " + username);
         List<Place> placesInUserCity = iPlaceRepository.findPlacesByCity(userCity).orElseThrow(() -> new RuntimeException("Unable to find places that match city : " + userCity));
 
         for (Place place : placesInUserCity) {
