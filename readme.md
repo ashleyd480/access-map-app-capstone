@@ -614,9 +614,22 @@ An example hashmap code could look like this:
 2. This map is populated by iterating through place.getTags() - and place is the one that aligns to the placeId of the place  the user is looking at in our Place Details page on the frontend.
 3. When filtering available tags, we use placeExistingTagsMap.containsKey(tag.getTagId()) to check if the tag is associated with the place. If not, we add it to the availableTags list.
 
-
-
-
-
+Edit: 9/16/2024
+Another approach I learned from Kyle P (shoutout!) is as follows:
+```
+  List<FeatureTag> placeExistingTags = place.getTags();
+        // Filter available tags (tags not associated with the place)
+        // return Available tags
+        Map<Integer, FeatureTag> availableMap = allTagsList.stream().collect(Collectors.toMap(
+                tag -> tag.getTagId(),
+                tag -> tag
+        ));
+        for (FeatureTag tag : placeExistingTags) {
+            availableMap.remove(tag.getTagId());
+        }
+        return new ArrayList<>(availableMap.values());
+```
+Essentially, we take the list of tags and use the stream method to map each tag's id and tag as key-value pairs.
+Then, we can use the remove method in hashmap to remove the id (key) that we have already in existing place tags. 
 
 

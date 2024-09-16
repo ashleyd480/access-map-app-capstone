@@ -91,7 +91,7 @@ It looks through each tag on the all tags list and as it’s on one tag on that 
         // these are tags the place already has, we don't want to show these to user
         List<FeatureTag> placeExistingTags = place.getTags();
         // Filter available tags (tags not associated with the place)
-        // return avaialble tags
+        // return Available tags
         Map<Integer, FeatureTag> availableMap = allTagsList.stream().collect(Collectors.toMap(
                 tag -> tag.getTagId(),
                 tag -> tag

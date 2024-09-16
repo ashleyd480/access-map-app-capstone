@@ -68,10 +68,13 @@ const AddReview = () => {
 
   //we render the radio buttons dynamically iterating through the array of numbers to render the radio buttons
 
-  // value is the vallue of each radio button
+  // value is the value of each radio button
   // When the user selects a radio button, its value is set as the rating in the formData state.
   // need to use the checked attribute in your radio buttons to control which one is selected based on the component's state. Without the checked attribute, React won't know which radio button should be selected when the form renders.
-  // By setting checked={formData.rating === value.toString()}, you ensure that the component re-renders correctly whenever the state changes.
+  // We could also verify this with the console.log. You can see when the user clicks 2. 
+// Line 88 is `formData.rating` and Line 89 is 	`value.toString()`. You can see 5 lines appear - which is from our mapping of the 5 ratings, and for each it checks to see if the `value` we are mapping over from the array is equal to the user’s selection. When it is mapped over 2, that matches what the user selected, so the check appears visually in the UI. 
+
+  
   return (
     <div className= "content">
       <h4>
@@ -86,18 +89,19 @@ const AddReview = () => {
                   {[1, 2, 3, 4, 5].map((value) => {
                      
                       console.log(formData.rating)
-                      console.log(value)
-              return (
+                      console.log(value.toString())
+              return (  // return a radio button for each number in the array 
+
                 <Form.Check
                   key={value} // needed because we are mapping over it 
                   type="radio"
-                //   id={`rating-${value}`}
                   label={value}
                   name="rating"
-                  value={value}
+                  value={value} // set value attribute to the current value we are mapping over 
+
                   checked={formData.rating === value.toString()}
                   //^ This evaluates to true for the radio button that matches the current rating 
-                //   checked={false}
+    
                   onChange={handleChange}
                 />
               )
