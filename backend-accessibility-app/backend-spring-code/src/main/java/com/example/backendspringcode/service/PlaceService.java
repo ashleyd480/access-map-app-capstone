@@ -135,31 +135,21 @@ public class PlaceService {
                 List<PlaceSearchResultsDTO> placesResults = iPlaceRepository.findByKeywordAndCity(keyword.toLowerCase(), city.toLowerCase(), sortField, sortDirection)
                         .orElseThrow(() -> new RuntimeException("No places found with the following query of keyword:  " + keyword + " and " + city));
 
-                for (PlaceSearchResultsDTO place : placesResults) {
-                    List<TagDTO> tagsAtPlace = iTagRepository.findTagsByPlaceId(place.getPlaceId()).orElseThrow(() -> new RuntimeException("Unable to find tags with place id : " + place.getPlaceId()));
-                    place.setTags(tagsAtPlace);
-                }
+                addTagsToPlaces (placesResults);
 
                 return placesResults;
             } else if (keyword != null) {
                 List<PlaceSearchResultsDTO> placesResults = iPlaceRepository.findByKeyword(keyword.toLowerCase(), sortField, sortDirection)
                         .orElseThrow(() -> new RuntimeException("No places found with this keyword: " + keyword));
 
-                for (PlaceSearchResultsDTO place : placesResults) {
-                    List<TagDTO> tagsAtPlace = iTagRepository.findTagsByPlaceId(place.getPlaceId()).orElseThrow(() -> new RuntimeException("Unable to find tags with place id : " + place.getPlaceId()));
-                    ;
-                    place.setTags(tagsAtPlace);
-                }
+                addTagsToPlaces (placesResults);
 
                 return placesResults;
             } else if (city != null) {
                 List<PlaceSearchResultsDTO> placesResults = iPlaceRepository.findByCity(city.toLowerCase(), sortField, sortDirection)
                         .orElseThrow(() -> new RuntimeException("No places found at this city: " + city));
 
-                for (PlaceSearchResultsDTO place : placesResults) {
-                    List<TagDTO> tagsAtPlace = iTagRepository.findTagsByPlaceId(place.getPlaceId()).orElseThrow(() -> new RuntimeException("Unable to find tags with place id : " + place.getPlaceId()));
-                    place.setTags(tagsAtPlace);
-                }
+                addTagsToPlaces (placesResults);
 
                 return placesResults;
             } else {
@@ -169,6 +159,12 @@ public class PlaceService {
             throw new RuntimeException("Failed to get place info for selected place id" + e.getMessage());
         }
 
+    }
+    private void addTagsToPlaces ( final List<PlaceSearchResultsDTO> placesResults) {
+        for (PlaceSearchResultsDTO place : placesResults) {
+            List<TagDTO> tagsAtPlace = iTagRepository.findTagsByPlaceId(place.getPlaceId()).orElseThrow(() -> new RuntimeException("Unable to find tags with place id : " + place.getPlaceId()));
+            place.setTags(tagsAtPlace);
+        }
     }
 }
 
