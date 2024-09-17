@@ -58,6 +58,7 @@ VI. [React Hooks](#react-hooks)
 VII. [Thinking Ahead](#thinking-ahead)
    - [Sorting Efficiency](#sorting-efficiency)
    - [Hash Mapping](#hash-mapping)
+   - [Helper Method](#helper-method)
 
 
 ---
@@ -632,4 +633,7 @@ Another approach I learned from Kyle P (shoutout!) is as follows:
 Essentially, we take the list of tags and use the stream method to map each tag's id and tag as key-value pairs.
 Then, we can use the remove method in hashmap to remove the id (key) that we have already in existing place tags. 
 
+## Helper Methods
+Edit: 9/17/2024
+Shoutout to Matt M and Sal who showed me the importance and approach behind helper methods in Java. I was able to implement a drier version of code in my ` searchPlaces` method in `PlaceService` by taking out the repetitive for each loop that was iterating through each place and adding its associated tags from the join table in database. This code block was used in each of the conditional if/elses which meant a lot of repetition. As such, I was able to refactor it as a private void method called `addTagsToPlaces` and passed it the parameter of `placeResults` which we are iterating through (and made that parameter final which I learned is a best practice). Now, the code is cleaner, and also using that clear method name makes the code easier and more intuitive to read. 
 
